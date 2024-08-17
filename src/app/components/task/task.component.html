@@ -1,1 +1,19 @@
-<p>task works!</p>
+<div class="container my-3 d-flex flex-column">
+  <div *ngIf="!taskId" class="alert alert-danger w-50 align-self-center">
+    Cannot Match Any Id
+  </div>
+  <div class="card w-50 align-self-center">
+    <div class="card-header">
+      <h3>{{ task.Title }}</h3>
+    </div>
+    <div class="card-body">
+      <h5>{{ task.Description }}</h5>
+      <div class="d-flex gap-2 mt-4">
+        <button [routerLink]="['/edit-task', taskId]" class="btn btn-warning">
+          Edit
+        </button>
+        <button routerLink="/" class="btn btn-danger">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
